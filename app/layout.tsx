@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Inter, Roboto } from "next/font/google";
+import "@fortawesome/fontawesome-svg-core/styles.css"; 
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
+// import "./globals.css";
+const inter = Roboto({ subsets: ["latin","vietnamese"],weight: ["400" , "700"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,6 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>{children}</body>
+      <head>
+        <link rel="shortcut icon" href="https://learn.rikkeiacademy.com/favicon.ico.png" type="image/x-icon" />
+      </head>
     </html>
   );
 }
